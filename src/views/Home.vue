@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     deleteTodo(id) {
-      axios.delete(`https://e-todo-api.herokuapp.com/${id}`)
+      axios.delete(`https://e-todo-api.herokuapp.com/todo/${id}`)
       .then( () => self.location = '/' )
       .catch(error => console.log(error))
     },
@@ -37,7 +37,7 @@ export default {
       const { title, completed } = newTodo1
       this.errorStatus = false
 
-      axios.post("https://e-todo-api.herokuapp.com/", 
+      axios.post("https://e-todo-api.herokuapp.com/todo", 
       {
         title,
         completed: completed
@@ -52,7 +52,7 @@ export default {
     }
   },
   created() {
-    axios.get("https://e-todo-api.herokuapp.com/")
+    axios.get("https://e-todo-api.herokuapp.com/todo")
     .then(res => this.todos = res.data)
     .catch((error) =>{
       console.log(error);
