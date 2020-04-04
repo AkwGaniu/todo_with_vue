@@ -13,7 +13,7 @@ import addTodo from "../components/addTodo"
 import axios from 'axios'
 
 export default {
-  name: '',
+  name: 'Home',
   components: { 
     todoItem,
     addTodo,
